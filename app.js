@@ -13,4 +13,21 @@ function goodbye(){
 
 }
 repeat(hello, 5);
-repeat(goodbye, 5)
+repeat(goodbye, 5);
+
+// Functions as return values
+
+function createGreeter(str) {
+	return function (name) {
+		return str+" "+name;
+	}
+}
+
+var greeterEng = createGreeter("Hello");
+var greeterFr = createGreeter("Bonjour");
+
+var eng = greeterEng("Anna");
+var fr = greeterFr("Sofia");
+
+console.log(eng);
+console.log(fr);
